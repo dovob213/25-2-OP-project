@@ -96,3 +96,9 @@ fun GreetingPreview() {
         Greeting("Android")
     }
 }
+
+
+fun test251104T() {
+    println("test~ ")
+}
+
