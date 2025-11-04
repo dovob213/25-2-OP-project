@@ -25,6 +25,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewScreenSizes
 import com.example.orientedprogrammingproject.ui.theme.OrientedProgrammingProjectTheme
 
+
+// test
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +36,7 @@ class MainActivity : ComponentActivity() {
             OrientedProgrammingProjectTheme {
                 OrientedProgrammingProjectApp()
             }
+
         }
     }
 }
