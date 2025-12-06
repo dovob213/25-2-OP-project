@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.CalendarView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -27,6 +28,7 @@ class HomeFragment : Fragment() {
     // UI 요소
     private lateinit var tvWelcome: TextView
     private lateinit var tvDate: TextView
+    private lateinit var calendarView: CalendarView
     private lateinit var tvTodayWorkouts: TextView
     private lateinit var tvTodayVolume: TextView
     private lateinit var btnStartWorkout: Button
@@ -57,6 +59,7 @@ class HomeFragment : Fragment() {
     private fun initViews(view: View) {
         tvWelcome = view.findViewById(R.id.tvWelcome)
         tvDate = view.findViewById(R.id.tvDate)
+        calendarView = view.findViewById(R.id.calendarView)
         tvTodayWorkouts = view.findViewById(R.id.tvTodayWorkouts)
         tvTodayVolume = view.findViewById(R.id.tvTodayVolume)
         btnStartWorkout = view.findViewById(R.id.btnStartWorkout)
@@ -68,6 +71,16 @@ class HomeFragment : Fragment() {
 
         // 환영 메시지
         tvWelcome.text = getGreetingMessage()
+
+        // 달력 날짜 선택 리스너
+        calendarView.setOnDateChangeListener { _, year, month, dayOfMonth ->
+            // 선택한 날짜 표시 (나중에 운동 기록 표시 기능 추가 가능)
+            val selectedDate = Calendar.getInstance().apply {
+                set(year, month, dayOfMonth)
+            }
+            val selectedDateFormat = SimpleDateFormat("yyyy년 M월 d일 EEEE", Locale.KOREAN)
+            tvDate.text = selectedDateFormat.format(selectedDate.time)
+        }
     }
 
     private fun loadTodaySummary() {
