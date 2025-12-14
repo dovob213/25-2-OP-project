@@ -94,10 +94,9 @@ class HomeFragment : Fragment() {
     }
 
     private fun setupListeners() {
-        // 운동 시작 버튼
+        // 운동 시작 버튼 - 루틴 선택 화면으로 이동
         btnStartWorkout.setOnClickListener {
-            // 운동 정보 화면으로 이동 (다른 팀원 담당)
-            findNavController().navigate(R.id.action_home_to_exercise_search)
+            findNavController().navigate(R.id.action_home_to_routine_selection)
         }
 
         // 빠른 루틴 버튼
