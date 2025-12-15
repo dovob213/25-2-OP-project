@@ -163,7 +163,7 @@ class HomeFragment : Fragment() {
             }.timeInMillis
 
             // 운동 기록 가져오기
-            val workoutLogs = workoutRepo.getWorkoutLogsByDateRange(startOfDay, endOfDay)
+            val workoutLogs = workoutRepo.getWorkoutLogs(startOfDay, endOfDay)
 
             if (workoutLogs.isEmpty()) {
                 // 운동 기록이 없을 때
@@ -175,9 +175,10 @@ class HomeFragment : Fragment() {
                 rvWorkoutHistory.visibility = View.VISIBLE
 
                 // 운동 이름과 함께 표시
-                val workoutsWithNames = workoutLogs.map { log ->
+                val workoutsWithNames = mutableListOf<Pair<WorkoutLog, String>>()
+                for (log in workoutLogs) {
                     val exercise = exerciseRepo.getExercise(log.exerciseId)
-                    log to (exercise?.name ?: "알 수 없는 운동")
+                    workoutsWithNames.add(Pair(log, exercise?.name ?: "알 수 없는 운동"))
                 }
 
                 workoutHistoryAdapter.setWorkouts(workoutsWithNames)
