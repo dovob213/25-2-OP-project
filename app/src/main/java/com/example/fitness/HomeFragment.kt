@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fitness.data.RepositoryProvider
+import com.example.fitness.model.WorkoutLog
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.Calendar
