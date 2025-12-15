@@ -169,7 +169,7 @@ class WorkoutExecutionFragment : Fragment() {
             try {
                 // 모든 운동 기록 저장
                 for (log in completedWorkouts) {
-                    workoutRepo.saveWorkout(log)
+                    workoutRepo.saveWorkoutLog(log)
                 }
 
                 Toast.makeText(

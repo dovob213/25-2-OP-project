@@ -2,7 +2,6 @@ package com.example.fitness.data
 
 import com.example.fitness.model.WorkoutLog
 
-//운동 기록 '저장 및 불러오기' 규칙
 
 interface WorkoutRepository {
     suspend fun getWorkoutLog(id: String): WorkoutLog?
@@ -13,7 +12,7 @@ interface WorkoutRepository {
     ): List<WorkoutLog>
 
     // 기록 저장 및 삭제
-    suspend fun saveWorkoutLog(log: WorkoutLog)
+    suspend fun saveWorkoutLog(workoutLog: WorkoutLog)
     suspend fun deleteWorkoutLog(id: String)
 
 }
