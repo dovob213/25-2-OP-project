@@ -1,5 +1,9 @@
 package com.example.fitness
 
+import com.example.fitness.model.Exercise
+import com.example.fitness.model.WorkoutLog
+import com.example.fitness.model.UserProfile
+import com.example.fitness.model.ExerciseCategory
 import kotlin.math.abs
 
 object RecommendationManager {

@@ -53,11 +53,14 @@ class MainActivity : AppCompatActivity() {
                 val testExercise = Exercise(
                     id = "test_exercise_001",
                     name = "Test Push Up",
-                    category = "Chest",
+                    category = com.example.fitness.model.ExerciseCategory.STRENGTH,
+                    difficulty = com.example.fitness.model.DifficultyLevel.BEGINNER,
                     description = "Firestore 연동 테스트용 데이터입니다.",
-                    level = 1.0,
                     tags = listOf("test", "bodyweight"),
-                    location = "Home"
+                    location = "Home",
+                    durationMinutes = 30,
+                    caloriesPerSession = 200,
+                    targetMuscles = listOf("Chest", "Triceps")
                 )
                 // Firestore에 저장
                 repository.saveExercise(testExercise)
